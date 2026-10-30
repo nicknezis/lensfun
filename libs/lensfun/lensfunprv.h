@@ -18,6 +18,11 @@
 // adjusted for the lens calibration data/camera crop factors.
 #define NEWTON_EPS 0.00001
 
+// The tolerance of the Newton iterations that invert the distortion and
+// TCA models. At NEWTON_EPS they stop up to about 0.02 pixels short, which
+// is enough to make the inverse noisy from one pixel to the next.
+#define NEWTON_EPS_RADIUS 1e-9
+
 class lfFuzzyStrCmp;
 
 /**

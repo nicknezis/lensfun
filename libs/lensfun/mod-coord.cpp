@@ -496,7 +496,7 @@ void lfModifier::ModifyCoord_UnDist_Poly3 (void *data, float *iocoord, int count
         for (int step = 0; ; step++)
         {
             double fru = ru * ru * ru + ru * one_minus_k1_div_k1 - rd_div_k1;
-            if (fru >= -NEWTON_EPS && fru < NEWTON_EPS)
+            if (fru >= -NEWTON_EPS_RADIUS && fru < NEWTON_EPS_RADIUS)
                 break;
             if (step > 5)
                 // Does not converge, no real solution in this area?
@@ -553,7 +553,7 @@ void lfModifier::ModifyCoord_UnDist_Poly5 (void *data, float *iocoord, int count
         {
             double ru2 = ru * ru;
             double fru = ru * (1.0 + k1 * ru2 + k2 * ru2 * ru2) - rd;
-            if (fru >= -NEWTON_EPS && fru < NEWTON_EPS)
+            if (fru >= -NEWTON_EPS_RADIUS && fru < NEWTON_EPS_RADIUS)
                 break;
             if (step > 5)
                 // Does not converge, no real solution in this area?
@@ -613,7 +613,7 @@ void lfModifier::ModifyCoord_UnDist_PTLens (void *data, float *iocoord, int coun
         for (int step = 0; ; step++)
         {
             double fru = ru * (a * ru * ru * ru + b * ru * ru + c * ru + d) - rd;
-            if (fru >= -NEWTON_EPS && fru < NEWTON_EPS)
+            if (fru >= -NEWTON_EPS_RADIUS && fru < NEWTON_EPS_RADIUS)
                 break;
             if (step > 5)
                 // Does not converge, no real solution in this area?

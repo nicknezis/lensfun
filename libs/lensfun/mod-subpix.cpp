@@ -228,7 +228,7 @@ void lfModifier::ModifyCoord_UnTCA_Poly3 (void *data, float *iocoord, int count)
         {
             ru2 = ru * ru;
             double fru = br * ru2 * ru + cr * ru2 + vr * ru - rd;
-            if (fru >= -NEWTON_EPS && fru < NEWTON_EPS)
+            if (fru >= -NEWTON_EPS_RADIUS && fru < NEWTON_EPS_RADIUS)
                 break;
             if (step > 5)
                 // Does not converge, no real solution in this area?
@@ -256,7 +256,7 @@ next_subpixel_r:
         {
             ru2 = ru * ru;
             double fru = bb * ru2 * ru + cb * ru2 + vb * ru - rd;
-            if (fru >= -NEWTON_EPS && fru < NEWTON_EPS)
+            if (fru >= -NEWTON_EPS_RADIUS && fru < NEWTON_EPS_RADIUS)
                 break;
             if (step > 5)
                 // Does not converge, no real solution in this area?
